@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Random Image + Text In Array</title>
+<script type="text/javascript" src="http://www.aps.anl.gov/js/jquery.js"></script>
+</head>
+<body>
+  <div id="imageSlideShow">
+  	<p>Default StartingText</p>
+    <img src="http://www.aps.anl.gov/Xray_Science_Division/img/slideshow/05.jpg" >
+  </div>
+  <script>
+    (function() {
+	setInterval(function(){
+      var slideShowImages = [
+        {
+          text: "Image 1",
+          img:  "http://www.aps.anl.gov/Xray_Science_Division/img/slideshow/01.jpg"
+        },
+		{
+          text: "Image 2",
+          img:  "http://www.aps.anl.gov/Xray_Science_Division/img/slideshow/02.jpg"
+        },
+		{
+          text: "Image 3",
+          img:  "http://www.aps.anl.gov/Xray_Science_Division/img/slideshow/03.jpg"
+        },
+        {
+          text: "Image 4",
+          img:  "http://www.aps.anl.gov/Xray_Science_Division/img/slideshow/04.jpg",
+        }
+      ];
+	  
+	  var slideShowImage = slideShowImages[Math.floor(Math.random() * slideShowImages.length)];
+	  $("#imageSlideShow").html();
+	  $("#imageSlideShow").html('<p>' + slideShowImage.text + '</p>'+'<img src="' + slideShowImage.img + '">');
+  	}, 5000);
+    })();
+	
+  </script>
+</body>
+</html>
